@@ -18,7 +18,7 @@ Fork and clone this repository and follow the instructions below. Make at least 
   > Remember to start your Rails server to inspect your application in the browser.
 
   1. Set up routes and controller actions for the `index`, `show`, `new`, and `create` for the `Post` model only. (Note: only use instance variables `@posts` and `@post` for sending data to the view)
-  2. Create views for the `index`, `show` and `new` actions. (Note: `index` and `show` views MUST render the content property, and the `new` view must have a form field for content)
+  2. Create views for the `index`, `show` and `new` actions. (Note: `index` and `show` views MUST render the post('s) `content` property, and the `new` view must have a namespaced form field for `content`)
 
 
 ## Test Your Code Early. Test Your Code Often
@@ -27,10 +27,11 @@ Before you begin, run the test suite (instructions below) to see all the checks 
 
 Once you think you've satisfied one of the above steps, run the test suite to double-check your work.
 
-To run the tests, first install the testing gems from the Gemfile:
+To run the tests, first ensure all gems from the Gemfile are installed:
 ```
 bundle install
 ```
+
 Then call the test runner each time you want to check your code.
 
 For Section I only
@@ -43,7 +44,7 @@ For Section II only
 rspec --format documentation spec/routes_controllers_views_spec.rb
 ```
 
-Testing both sections at Once
+Display test results for both sections at Once
 ```
 rspec --format documentation
 ```
