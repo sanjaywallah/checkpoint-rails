@@ -23,7 +23,13 @@ Fork and clone this repository and follow the instructions below. Make at least 
 
 ## Test Your Code Early. Test Your Code Often
 
-Before you begin, run the test suite (instructions below) to see all the checks that will be run against your work. Your job is to get the results showing `0 failures`.
+Before you begin, run the test suite (instructions below) to see all the checks that will be run against your work.
+
+Pay close attention to lines showing `Error - uninitialized constant NAME`. This tells you a file hasn't been created or the contents haven't been defined properly. There are tests waiting to run which can't proceed until you set up those files.
+
+Your job is to get the results showing `0 failures`, and have no lines showing `Error - uninitialized constant`
+
+
 
 Once you think you've satisfied one of the above steps, run the test suite to double-check your work.
 
