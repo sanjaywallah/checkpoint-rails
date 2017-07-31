@@ -3,6 +3,13 @@ require 'rails_helper'
 RSpec.describe "Models & Migrations" do
 
   begin
+    Post.new
+  rescue NameError => exc
+    puts "Error - #{exc.message}"
+    # puts exc.backtrace
+    class Post < ActiveRecord::Base
+    end
+  end
 
     describe Post, :type => :model do
       it "has an associated table" do
@@ -37,12 +44,14 @@ RSpec.describe "Models & Migrations" do
       end
     end
 
+  begin
+    Comment.new
   rescue NameError => exc
     puts "Error - #{exc.message}"
     # puts exc.backtrace
+    class Comment < ActiveRecord::Base
+    end
   end
-
-  begin
 
     describe Comment, :type => :model do
       it "has an associated table" do
@@ -62,10 +71,5 @@ RSpec.describe "Models & Migrations" do
         should belong_to(:post)
       end
     end
-
-  rescue NameError => exc
-    puts "Error - #{exc.message}"
-    # puts exc.backtrace
-  end
 
 end

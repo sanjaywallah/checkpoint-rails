@@ -3,6 +3,13 @@ require 'rails_helper'
 RSpec.describe "Routes, Controllers & Views" do
 
   begin
+    PostsController.new
+  rescue NameError => exc
+    puts "Error - #{exc.message}"
+    # puts exc.backtrace
+    class PostsController < ApplicationController
+    end
+  end
 
   describe PostsController, type: :controller do
     render_views
@@ -101,11 +108,6 @@ RSpec.describe "Routes, Controllers & Views" do
       end
     end
 
-  end
-  
-  rescue NameError => exc
-    puts "Error - #{exc.message}"
-    # puts exc.backtrace
   end
 
 end
